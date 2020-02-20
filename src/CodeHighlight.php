@@ -4,18 +4,19 @@ declare(strict_types=1);
 
 namespace HighlightLib;
 
-use HighlightLib\Contracts\Tokenizer\TokenizerClass;
+use HighlightLib\Classes\Tokenizer\TokenizerClass;
 
 class CodeHighlight {
     //private $tokenizer;
     //private $assembler;
-    //private $clasifier;
+    //private $classifier;
 
-    //public function __construct(TokenInterface $tokenizer, $assembler, $clasifier )  {
-    //}
+    /* public function __construct()  {
+        $this->tokenizer =
+    } */
 
-    public function highlight(string $string): array
-    {
+    public function highlight(string $string): array {
+        //var_dump($string);
         $outArray = new TokenizerClass();
 
         return $outArray->tokenize($string);
