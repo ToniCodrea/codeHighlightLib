@@ -8,6 +8,6 @@ use HighlightLib\Contracts\Tokenizer\TokenizerInterface;
 
 class TokenizerClass implements TokenizerInterface {
     public function tokenize(string $in): array {
-        return preg_split("/ +/", $in);
+        return preg_split('/\s+/', $in);
     }
 }
