@@ -1,0 +1,16 @@
+{
+    "name": "codehighlightlib/codehighlightlib",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Antonio Codrea",
+            "email": "antonio.codrea@evozon.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"HighlightLib\\": "src/"}
+    },
+    "require": {
+        "phpunit/phpunit": "^8.5"
+    }
+}

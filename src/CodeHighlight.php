@@ -2,12 +2,24 @@
 
 declare(strict_types=1);
 
-class CodeHighlight
-{
-    public function highlight(string $string): string
-    {
-        // use the defined classes/services to perform the highlighting on $string
+namespace HighlightLib;
 
-        return $string;
+use HighlightLib\Contracts\Tokenizer\TokenizerClass;
+
+class CodeHighlight {
+    //private $tokenizer;
+    //private $assembler;
+    //private $clasifier;
+
+    //public function __construct(TokenInterface $tokenizer, $assembler, $clasifier )  {
+    //}
+
+    public function highlight(string $string): array
+    {
+        $outArray = new TokenizerClass();
+
+        return $outArray->tokenize($string);
     }
 }
+
+
