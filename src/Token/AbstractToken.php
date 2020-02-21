@@ -20,13 +20,13 @@ abstract class AbstractToken implements TokenInterface {
     public function getSpaces(int $previousOffset): string
     {
         $spaces = "";
-        for ($i = 0; $i < $this->stringOffset-$previousOffset; $i++) $spaces .= " ";
+        for ($i = 0; $i < $this->stringOffset-$previousOffset-1; $i++) $spaces .= " ";
         return $spaces;
     }
 
     public function getText(): string
     {
-        return '<span class ="'. $this->getCSSType() . '"> ' . $this->stringToken . '</span>';
+        return '<span class ="'. $this->getCSSType() . '">' . $this->stringToken . '</span>';
     }
 
     public function getOffset(): int
