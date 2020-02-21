@@ -15,11 +15,12 @@ class CodeHighlight {
 
     public function __construct($path)  {
         $this->classifier = new Classifier($path);
+        $this->tokenizer = new Tokenizer();
+        $this->assembler = new Assembler();
+
     }
 
     public function highlight(string $string): string {
-        $this->tokenizer = new Tokenizer();
-        $this->assembler = new Assembler();
         $arr = array();
         foreach ($this->tokenizer->tokenize($string) as $stringToken) {
             $arr[] = $this->classifier->classify($stringToken);
