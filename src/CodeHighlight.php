@@ -19,15 +19,10 @@ class CodeHighlight {
 
     public function highlight(string $string): string {
         $this->tokenizer = new TokenizerClass();
-        $arr = $this->tokenizer->tokenize($string);
-        $assembler = new Assembler();
-        $arr2 = array();
-        foreach ($arr as $stringToken) {
-            $arr2[] = array($stringToken, $this->classifier->classify($stringToken));
-        }
+        $this->assembler = new Assembler();
         $final = "";
-        foreach ($arr2 as $arrToken) {
-            $final .= $assembler->assemble($arrToken);
+        foreach ($this->tokenizer->tokenize($string) as $stringToken) {
+            $final .= $this->assembler->assemble(array($stringToken, $this->classifier->classify($stringToken)));
         }
         return $final;
     }
