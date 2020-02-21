@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-namespace HighlightLib\Classes\Classifier;
+namespace HighlightLib\Classifier;
 
-use HighlightLib\Classes\Token\PlainToken;
-use HighlightLib\Contracts\Classifier\ClassifierInterface;
-use HighlightLib\Contracts\Token\TokenInterface;
-
-
+use HighlightLib\Token\PlainToken;
+use HighlightLib\Contracts\ClassifierInterface;
+use HighlightLib\Contracts\TokenInterface;
 
 class Classifier implements ClassifierInterface {
     private $config;

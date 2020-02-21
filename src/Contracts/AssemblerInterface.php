@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HighlightLib\Contracts\Assembler;
+namespace HighlightLib\Contracts;
 
 interface AssemblerInterface {
     public function assemble(array $tokens): string;

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace HighlightLib;
 
-use HighlightLib\Classes\Assembler\Assembler;
-use HighlightLib\Classes\Tokenizer\TokenizerClass;
-use HighlightLib\Classes\Classifier\Classifier;
+use HighlightLib\Assembler\Assembler;
+use HighlightLib\Tokenizer\Tokenizer;
+use HighlightLib\Classifier\Classifier;
 
 class CodeHighlight {
     private $tokenizer;
@@ -18,7 +18,7 @@ class CodeHighlight {
     }
 
     public function highlight(string $string): string {
-        $this->tokenizer = new TokenizerClass();
+        $this->tokenizer = new Tokenizer();
         $this->assembler = new Assembler();
         $final = "";
         foreach ($this->tokenizer->tokenize($string) as $stringToken) {

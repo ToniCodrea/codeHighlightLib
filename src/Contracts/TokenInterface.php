@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HighlightLib\Contracts\Token;
+namespace HighlightLib\Contracts;
 
 interface TokenInterface {
     public function getCSSType() : string;
