@@ -1,11 +1,11 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
-class KeywordToken implements TokenInterface {
+class KeywordToken extends AbstractToken {
 
-    public function getCSSType(): string {
+    public function getCSSType(): string
+    {
         return "keyword";
     }
 }

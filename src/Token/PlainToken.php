@@ -1,11 +1,17 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
-class PlainToken implements TokenInterface {
+class PlainToken extends AbstractToken {
 
-    public function getCSSType(): string {
+
+    function getText(): string
+    {
+        return $this->stringToken;
+    }
+
+    public function getCSSType(): string
+    {
         return "plain";
     }
 }

@@ -20,11 +20,11 @@ class CodeHighlight {
     public function highlight(string $string): string {
         $this->tokenizer = new Tokenizer();
         $this->assembler = new Assembler();
-        $final = "";
+        $arr = array();
         foreach ($this->tokenizer->tokenize($string) as $stringToken) {
-            $final .= $this->assembler->assemble(array($stringToken, $this->classifier->classify($stringToken)));
+            $arr[] = $this->classifier->classify($stringToken);
         }
-        return $final;
+        return $this->assembler->assemble($arr);
     }
 }
 

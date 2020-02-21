@@ -1,11 +1,11 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
-class NumberToken implements TokenInterface {
+class NumberToken extends AbstractToken {
 
-    public function getCSSType(): string {
+    public function getCSSType(): string
+    {
         return "number";
     }
 }

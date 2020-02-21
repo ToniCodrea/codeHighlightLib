@@ -1,11 +1,16 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
-class NewlineToken implements TokenInterface {
+class NewlineToken extends AbstractToken {
 
-    public function getCSSType(): string {
-        return 'newline';
+    public function getCSSType(): string
+    {
+        return "Newline";
+    }
+
+    public function getText(): string
+    {
+        return '<br>';
     }
 }

@@ -17,9 +17,9 @@ class Classifier implements ClassifierInterface {
 
     public function classify(string $stringToken): TokenInterface {
         foreach ($this->config as $reg => $value) {
-            if (preg_match($reg, $stringToken) ) return new $value;
+            if (preg_match($reg, $stringToken) ) return new $value($stringToken);
         }
-        return new PlainToken();
+        return new PlainToken($stringToken);
     }
 
 }

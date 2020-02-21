@@ -7,5 +7,3 @@ namespace HighlightLib\Contracts;
 interface TokenizerInterface {
     public function tokenize(string $in): array;
 }
-
-
