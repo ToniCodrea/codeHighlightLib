@@ -11,9 +11,9 @@ class Assembler implements AssemblerInterface {
         $final = "";
         $previousOffset = 0;
         foreach ($tokens as $token) {
-            $final .= $token->GetSpaces($previousOffset);
-            $final .= $token->GetText();
-            $previousOffset = $token->GetOffset();
+            $final .= $token->getSpaces($previousOffset);
+            $final .= $token->getText();
+            $previousOffset = $token->getOffset();
         }
         return $final;
     }

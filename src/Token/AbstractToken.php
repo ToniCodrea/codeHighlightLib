@@ -17,19 +17,19 @@ abstract class AbstractToken implements TokenInterface {
         $this->stringOffset = $offset;
     }
 
-    public function GetSpaces(int $previousOffset): string
+    public function getSpaces(int $previousOffset): string
     {
         $spaces = "";
         for ($i = 0; $i < $this->stringOffset-$previousOffset; $i++) $spaces .= " ";
         return $spaces;
     }
 
-    public function GetText(): string
+    public function getText(): string
     {
         return '<span class ="'. $this->getCSSType() . '"> ' . $this->stringToken . '</span>';
     }
 
-    public function GetOffset(): int
+    public function getOffset(): int
     {
         return $this->stringOffset + strlen($this->stringToken);
     }
