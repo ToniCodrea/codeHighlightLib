@@ -5,4 +5,4 @@ use HighlightLib\CodeHighlight;
 
 $path = require __DIR__ . '/src/Config/config.php';
 $obj = new CodeHighlight($path);
-$obj->highlight('$abc true false . , [ ]');
+print_r($obj->highlight('$abc $abc abc         false true       __DIR__'));
