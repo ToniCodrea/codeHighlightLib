@@ -25,6 +25,7 @@ class CodeHighlight {
         foreach ($this->tokenizer->tokenize($string) as $stringToken) {
             $arr[] = $this->classifier->classify($stringToken);
         }
+        //print_r($arr);
         return $this->assembler->assemble($arr);
     }
 }

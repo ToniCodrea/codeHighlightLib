@@ -15,11 +15,11 @@ class Classifier implements ClassifierInterface {
         $this->config = $path;
     }
 
-    public function classify(string $stringToken): TokenInterface {
+    public function classify(array $stringToken): TokenInterface {
         foreach ($this->config as $reg => $value) {
-            if (preg_match($reg, $stringToken) ) return new $value($stringToken);
+            if (preg_match($reg, $stringToken[0]) ) return new $value($stringToken[0],$stringToken[1]);
         }
-        return new PlainToken($stringToken);
+        return new PlainToken($stringToken[0], $stringToken[1]);
     }
 
 }
